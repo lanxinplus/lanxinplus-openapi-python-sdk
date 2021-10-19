@@ -23,6 +23,9 @@ REQUIRES = [
   "python-dateutil",
 ]
 
+with open('README.rst', 'rb') as f:
+    long_description = f.read().decode('utf-8')
+
 setup(
     name=NAME,
     version=VERSION,
@@ -35,7 +38,5 @@ setup(
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
-    long_description="""\
-    LanXin+ OpenAPI Platform  # noqa: E501
-    """
+    long_description=long_description
 )
